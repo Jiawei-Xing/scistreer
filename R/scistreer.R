@@ -95,6 +95,7 @@ perform_nni = function(tree_init, P, max_iter = 100, eps = 0.01, ncores = 1, ver
         RcppParallel::setThreadOptions(numThreads = ncores)
         
         scores = nni_cpp_parallel(tree_current, P)
+        print(scores)
         
         if (max(scores) > max_current + eps) {
             max_id = which.max(scores)
